@@ -1,0 +1,35 @@
+<?xml version="1.1" encoding="UTF-8"?>
+
+<!DOCTYPE demonstration [
+    <!ELEMENT demonstration (Communications)>
+    <!ELEMENT Communications (Communication*)>
+    <!ELEMENT Communication ((Subject,Message)|(Subject, Memo))>
+    <!ATTLIST Communication sendedDate CDATA #REQUIRED>
+    <!ATTLIST Communication direction (received|send|unknown) #REQUIRED>
+    <!ATTLIST Communication multipleReceiver (true|false) #IMPLIED>
+    <!ATTLIST Communication id ID #REQUIRED>
+    <!ATTLIST Communication answer IDREF #IMPLIED>
+    <!-- <!ELEMENT Communication ((Subject,Message)|(Subject)|(Message))> -->
+    <!-- autre solution: si on veut sujet ou message ou sujet ET message: (Subjet?,Message?) -->
+    <!-- au minimum deux messages: <!ELEMENT Communication (Subject,Message,Message+)>-->
+    <!-- au maximum 5 messages: <!ELEMENT Communication (Subject,Message?,Message?,Message?,Message?,Message?)>  -->
+    <!ELEMENT Subject (#PCDATA)>
+    <!ELEMENT Message (#PCDATA)>
+    <!ELEMENT Memo EMPTY>
+]>
+<demonstration>
+    <Communications>
+        <Communication id="c1" sendedDate="12/05/2022" direction="received">
+            <Subject>Message de bienvenu</Subject>
+            <Message>Salut les WAD</Message>
+        </Communication>
+        <Communication id="c2" sendedDate="26/08/2022" direction="send">
+            <Subject>Test</Subject>
+            <Memo/>
+        </Communication>
+        <Communication id="c3" answer="c1" sendedDate="12/05/2022" direction="unknown" multipleReceiver="true">
+            <Subject></Subject>
+            <Message></Message>
+        </Communication>
+    </Communications>
+</demonstration>

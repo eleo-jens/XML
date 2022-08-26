@@ -1,0 +1,60 @@
+<!-- demos est la balise racine pour l'ensemble du contenu -->
+<demos> 
+    <!-- XML pour du formatage de documentation -->
+    <documentation>
+        <titre>Le XML en tant que document :</titre>
+        <textePrincipal>
+            <paragraphe>
+                <!-- la balise format est auto-fermante poru apporter des infos complémentaires -->
+                <format taille="12px" police="arial" />
+                Le XML est pratique pour encoder des <imporant>informations formatées.</imporant>
+                <citationDeSamuel>CE langage est très permissif</citationDeSamuel>
+                <!-- on peut créer nos propres balises -->
+            </paragraphe>
+        </textePrincipal>
+    </documentation>
+
+    <!-- XML pour de la transmission de données -->
+    <envois>
+        <transmission>
+            <expediteur>
+                <contact>
+                    <nom>Morre</nom>
+                    <prenom>Thierry</prenom>
+                    <email>thierry.morre@cognitic.be</email>
+                    <formateur />
+                    <!-- peut faire office d'une valeur booléenne: si la balise est là, ce contact est un formateur -->
+                </contact>
+            </expediteur>
+            <destinataires>
+                <contact>
+                    <nom>Legrain</nom>
+                    <prenom>Samuel</prenom>
+                    <email>samuel.legrain@bstorm.be</email>
+                </contact>
+                <contact>
+                    <nom>Person</nom>
+                    <prenom>Michael</prenom>
+                    <email>michael.person@congnitic.be</email>
+                </contact>
+                <contact>
+                    <nom>Beaurive</nom>
+                    <prenom>Aude</prenom>
+                    <email>aude.beaurive@bstrom.be</email>
+                </contact>
+            </destinataires>
+            <dates>
+                <envois>
+                    25/08/2022
+                </envois>
+                <reception>
+                    26/08/2022
+                </reception>
+            </dates>
+        </transmission>
+        <sujet>Cours d'XML des WAD</sujet>
+        <message>
+            Hello tout le monde !
+        </message>
+    </envois>
+</demos>

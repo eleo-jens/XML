@@ -1,0 +1,82 @@
+<?xml version="1.1" encoding="UTF-8"?>
+
+<livres>
+    <livre>
+        <titre>Circé</titre>
+        <!-- si on a plusieurs auteurs; on peut créer un element de <auteurs> -->
+        <auteur> 
+            <prenom>Madeline</prenom>
+            <nom>Miller</nom>
+        </auteur>
+        <genre>Roman</genre>
+        <datePublicaton>
+            <jour>2</jour>
+            <mois>5</mois>
+            <annee>2019</annee>
+        </datePublicaton>
+    </livre>
+    <livre>
+        <titre>Lait et miel</titre>
+        <auteur>
+            <prenom>Rupi</prenom>
+            <nom>Kaur</nom>
+        </auteur>
+        <genre>Poésie</genre>
+        <datePublicaton>
+            <jour>22</jour>
+            <mois>9</mois>
+            <annee>2017</annee>
+        </datePublicaton>
+    </livre>
+    <livre>
+        <titre>
+            <principal>Harry Potter</principal>
+            <sous-titre>et la coupe de feu</sous-titre>
+        </titre>
+        <auteur>
+            <prenom>J.K</prenom>
+            <nom>Rowling</nom>
+        </auteur>
+        <genre>Fantastique</genre>
+        <datePublicaton>
+            <jour>26</jour>
+            <mois>6</mois>
+            <annee>1997</annee>
+        </datePublicaton>
+        <serie nom="Harry Potter" tome="4" titrePremier="Harry Potter et l'école des sorciers" />
+        <!-- Solution du prof: 
+            <PremierDeLaCollection>        
+                <principal>Harry Potter</principal>
+                <sous-titre>à l'école des sorciers</sous-titre>
+            </PremierDeLaCollection> -->
+    </livre>
+    <livre>
+        <titre>1984</titre>
+        <auteur>
+            <prenom>George</prenom>
+            <nom>Orwell</nom>
+        </auteur>
+        <genre>Distopy</genre>
+        <datePublicaton>
+            <jour>16</jour>
+            <mois>11</mois>
+            <annee>1972</annee>
+        </datePublicaton>
+    </livre>
+    <livre>
+        <principal>Harry Potter</principal>
+        <sous-titre>à l'école des sorciers</sous-titre>
+        <auteur>
+            <prenom>J.K</prenom>
+            <nom>Rowling</nom>
+        </auteur>
+        <genre>Fantasy</genre>
+        <datePublicaton>
+            <jour>16</jour>
+            <mois>11</mois>
+            <annee>2003</annee>
+        </datePublicaton>
+        <serie nom="Harry Potter" tome="1" />
+        <!-- autre solution: <PremierDeLaCollection/> -->
+    </livre>
+</livres>

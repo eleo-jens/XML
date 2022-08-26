@@ -1,0 +1,46 @@
+<?xml version="1.1" encoding="UTF-8"?>
+
+<Annuaire>
+    <Personne>
+        <Genre>Femme</Genre>
+        <Nom>McRoe</Nom>
+        <Prenom>Paula</Prenom>
+        <Adresse>
+            <Rue>Place Jourdan</Rue>
+            <Numero>6</Numero>
+            <Boite>16</Boite>
+            <CodePostal>1150</CodePostal>
+            <Ville>Bruxelles</Ville>
+            <Pays>BELGIUM</Pays>
+        </Adresse>
+        <Telephones>
+            <Telephone type="portable">0484652398</Telephone>
+            <Telephone type="bureau">026543298</Telephone>
+        </Telephones>
+        <Emails>
+            <Email type="personnel">paula007@gmail.com</Email>
+            <Email type="professionnel">p.mcroe@microsoft.com</Email>
+        </Emails>
+    </Personne>
+    <Personne>
+        <Genre>Femme</Genre>
+        <Nom>Carthy</Nom>
+        <Prenom>Anna</Prenom>
+        <Adresse>
+            <Rue>Rue du temps des pommes</Rue>
+            <Numero>112</Numero>
+            <Boite/>
+            <CodePostal>8030</CodePostal>
+            <Ville>Charleroi</Ville>
+            <Pays>BELGIUM</Pays>
+        </Adresse>
+        <Telephones>
+            <Telephone type="portable">0484987654</Telephone>
+            <Telephone type="fixe">029846547</Telephone>
+        </Telephones>
+        <Emails>
+            <Email type="personnel">annoushka56@gmail.com</Email>
+            <Email type="professionnel">anna.carthy@apple.com</Email>
+        </Emails>
+    </Personne>
+</Annuaire>

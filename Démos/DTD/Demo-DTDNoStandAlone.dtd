@@ -1,0 +1,15 @@
+<!ELEMENT demonstration (Communications)>
+<!ELEMENT Communications (Communication*)>
+<!ELEMENT Communication ((Subject,Message)|(Subject, Memo))>
+<!ATTLIST Communication sendedDate CDATA #REQUIRED>
+<!ATTLIST Communication direction (received|send|unknown) #REQUIRED>
+<!ATTLIST Communication multipleReceiver (true|false) #IMPLIED>
+<!ATTLIST Communication id ID #REQUIRED>
+<!ATTLIST Communication answer IDREF #IMPLIED>
+<!-- <!ELEMENT Communication ((Subject,Message)|(Subject)|(Message))> -->
+<!-- autre solution: si on veut sujet ou message ou sujet ET message: (Subjet?,Message?) -->
+<!-- au minimum deux messages: <!ELEMENT Communication (Subject,Message,Message+)>-->
+<!-- au maximum 5 messages: <!ELEMENT Communication (Subject,Message?,Message?,Message?,Message?,Message?)>  -->
+<!ELEMENT Subject (#PCDATA)>
+<!ELEMENT Message (#PCDATA)>
+<!ELEMENT Memo EMPTY>
