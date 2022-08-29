@@ -1,0 +1,12 @@
+<?xml version="1.1" encoding="UTF-8"?>
+
+<xag:Annuaire xmlns:xag="MonAgenda"> <!-- Annuaire appartient au namespace MonAgenda, nom, prenom, personne fait parti du namespace MonAgenda-->
+    <xag:Personne>
+        <xag:Nom>Legrain</xag:Nom> 
+        <xag:Prenom>Samuel</xag:Prenom>
+    </xag:Personne>
+    <xag:Personne>
+        <xag:Nom>lklkd</xag:Nom>
+        <xag:Prenom>Saml</xag:Prenom>
+    </xag:Personne>
+</xag:Annuaire>
