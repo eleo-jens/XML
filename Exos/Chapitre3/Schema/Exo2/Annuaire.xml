@@ -1,0 +1,44 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+
+<Annuaire
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="Annuaire.xsd">
+    <Personne>
+        <Sexe>F</Sexe>
+        <Nom>Jean</Nom>
+        <Prenom>Katya</Prenom>
+        <Adresse>
+            <Rue>Rue de la cerise</Rue>
+            <CodePostal>1150</CodePostal>
+            <Ville>Bruxelles</Ville>
+            <Pays>Belgique</Pays>
+        </Adresse>
+        <Telephones>
+            <Telephone type="Perso">0495321456</Telephone>
+            <Telephone type="Pro">026548963</Telephone>
+        </Telephones>
+        <Courriels></Courriels>
+    </Personne>
+
+    <Personne>
+        <Sexe>H</Sexe>
+        <Nom>Paul</Nom>
+        <Prenom>Jean-Pail</Prenom>
+        <Adresse>
+            <Rue>Rue de la haie</Rue>
+            <Numero>56</Numero>
+            <Boite>123</Boite>
+            <CodePostal>8000</CodePostal>
+            <Ville>Charleroi</Ville>
+            <Pays>Belgique</Pays>
+        </Adresse>
+        <Telephones>
+            <Telephone type="Perso">0495321456</Telephone>
+            <Telephone type="Pro">026548963</Telephone>
+        </Telephones>
+        <Courriels>
+            <Courriel type="Pro">Jean-Pail.paul@oxfam.com</Courriel>
+            <Courriel type="Perso">jpp8000@gmail.com</Courriel>
+        </Courriels>
+    </Personne>
+</Annuaire>
