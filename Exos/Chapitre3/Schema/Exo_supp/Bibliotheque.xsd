@@ -1,0 +1,102 @@
+<?xml version="1.1" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <!--ELEMENT-->
+    <xsd:element name="Bibliotheque" type="T_Contenu" />
+    <xsd:element name="Livre" type="T_Livre" />
+    <xsd:element name="Titre" type="T_Titre" />
+    <xsd:element name="Auteur" type="T_Auteur" />
+    <xsd:element name="Nom" type="xsd:string" />
+    <xsd:element name="Prenom" type="xsd:string" />
+    <xsd:element name="Tomes" type="T_Tomes" />
+    <xsd:element name="Tome" type="T_Tome" />
+    <xsd:element name="Pages" type="xsd:positiveInteger" />
+    <xsd:element name="InfosEdition" type="T_InfosEdition" />
+    <xsd:element name="Article" type="T_Article" />
+    <xsd:element name="Avis" type="xsd:string" />
+    <xsd:element name="InfosPublication" type="T_InfosPublication" />
+    <xsd:element name="AnneePublication" type="T_AnneePublication" />
+    <!--TYPES-->
+    <xsd:complexType name="T_Contenu">
+        <xsd:choice minOccurs="0" maxOccurs="unbounded">
+            <xsd:element ref="Livre"/>
+            <xsd:element ref="Article"/>
+        </xsd:choice>
+    </xsd:complexType>
+
+    <xsd:complexType name="T_Livre">
+        <xsd:sequence>
+            <xsd:element ref="Titre" />
+            <xsd:element ref="Auteur" maxOccurs="unbounded" />
+            <xsd:element ref="Tomes" />
+            <xsd:element ref="InfosEdition" />
+            <xsd:element ref="Avis" minOccurs="0" />
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="T_Auteur">
+        <xsd:sequence>
+            <xsd:element ref="Nom" />
+            <xsd:element ref="Prenom" maxOccurs="2" />
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="T_Tomes">
+        <xsd:sequence>
+            <xsd:element ref="Tome" maxOccurs="unbounded" />
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="T_Tome">
+        <xsd:attribute name="sous-titre" type="xsd:string" />
+        <xsd:attribute name="nbPages" type="xsd:positiveInteger" use="required" />
+    </xsd:complexType>
+
+    <xsd:complexType name="T_InfosEdition">
+        <xsd:sequence>
+            <xsd:element name="Editeur" type="xsd:string" />
+            <xsd:element name="LieuEdition" type="xsd:string" />
+            <xsd:element name="LieuImpression" type="xsd:string" />
+            <xsd:element name="ISBN" type="T_ISBN" />
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="T_Article">
+        <xsd:sequence>
+            <xsd:element ref="Titre" />
+            <xsd:element ref="Auteur" maxOccurs="unbounded" />
+            <xsd:element ref="InfosPublication" />
+            <xsd:element ref="Avis" minOccurs="0" />
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="T_InfosPublication" mixed="true">
+        <xsd:all>
+            <xsd:element ref="Pages" />
+            <xsd:element ref="AnneePublication" />
+            <xsd:element name="NumeroJournal" type="xsd:positiveInteger" />
+        </xsd:all>
+        <xsd:attribute name="nomJournal" default="Feuille de Chou" />
+    </xsd:complexType>
+
+    <xsd:simpleType name="T_AnneePublication">
+        <xsd:restriction base="xsd:gYear">
+            <xsd:maxExclusive value="2022" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:complexType name="T_Titre">
+        <xsd:simpleContent>
+            <xsd:extension base="xsd:string">
+                <xsd:attribute name="sous-titre" type="xsd:string" />
+            </xsd:extension>
+        </xsd:simpleContent>
+    </xsd:complexType>
+
+    <xsd:simpleType name="T_ISBN">
+        <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="10" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+</xsd:schema>
