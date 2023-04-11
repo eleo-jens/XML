@@ -19,6 +19,21 @@
     <xsd:element name="Courriel" type="T_Courriel"/>
 
     <!--TYPES-->
+    <!--SIMPLES-->
+    <xsd:simpleType name="T_HommeouFemme">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="F" />
+            <xsd:enumeration value="H" />
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <xsd:simpleType name="T_CodePostal">
+        <xsd:restriction base="xsd:positiveInteger">
+            <xsd:minInclusive value="1000" />
+            <xsd:maxInclusive value="9999" />
+        </xsd:restriction>
+    </xsd:simpleType>
+    <!--COMPLEXES-->
     <xsd:complexType name="T_Annuaire">
         <xsd:sequence>
             <xsd:element ref="Personne" minOccurs="0" maxOccurs="unbounded" />
@@ -36,12 +51,6 @@
         </xsd:sequence>
     </xsd:complexType>
 
-    <xsd:simpleType name="T_HommeouFemme">
-        <xsd:restriction base="xsd:string">
-            <xsd:enumeration value="F" />
-            <xsd:enumeration value="H" />
-        </xsd:restriction>
-    </xsd:simpleType>
 
     <xsd:complexType name="T_Adresse">
         <xsd:sequence>
@@ -54,12 +63,6 @@
         </xsd:sequence>
     </xsd:complexType>
 
-    <xsd:simpleType name="T_CodePostal">
-        <xsd:restriction base="xsd:positiveInteger">
-            <xsd:minInclusive value="1000" />
-            <xsd:maxInclusive value="9999" />
-        </xsd:restriction>
-    </xsd:simpleType>
 
     <xsd:complexType name="T_Telephones">
         <xsd:sequence>

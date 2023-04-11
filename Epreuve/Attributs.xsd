@@ -1,0 +1,27 @@
+<?xml version="1.1" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <!--ELEMENTS-->
+    <xsd:element name="Couleur" type="T_Couleur"/>
+    
+    <!--TYPES-->
+    <xsd:complexType name="T_Couleur">
+        <xsd:attribute name="Rouge" type="T_RGB" use="required"/>
+        <xsd:attribute name="Vert" type="T_RGB" use="required"/>
+        <xsd:attribute name="Bleu" type="T_RGB" use="required"/>
+        <xsd:attribute name="Opacite" type="T_Reel"/>
+    </xsd:complexType>
+
+    <xsd:simpleType name="T_RGB">
+        <xsd:restriction base="xsd:integer">
+            <xsd:minInclusive value="0"/>
+            <xsd:maxInclusive value="255"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="T_Reel">
+        <xsd:restriction base="xsd:decimal">
+            <xsd:maxInclusive value="1"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+</xsd:schema>

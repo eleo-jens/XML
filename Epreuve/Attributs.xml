@@ -1,0 +1,6 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+
+<Couleur
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="Attributs.xsd"
+    Rouge="0" Vert="255" Bleu="56" Opacite="0.35"/>

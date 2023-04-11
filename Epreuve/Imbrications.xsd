@@ -1,0 +1,105 @@
+<?xml version="1.1" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:include schemaLocation="Sequence.xsd" />
+    <!--ELEMENTS-->
+    <xsd:element name="Classe" type="T_Classe" />
+    <xsd:element name="Professeur" type="T_Professeur" />
+    <xsd:element name="Eleve" type="T_Eleve" />
+    <xsd:element name="Nom" type="T_Nom" />
+    <xsd:element name="Prenom" type="T_Nom" />
+    <xsd:element name="AnneeDebut" type="xsd:gYear" />
+    <xsd:element name="Telephone" type="T_Telephone" />
+    <xsd:element name="Titre" type="T_Titre" />
+    <xsd:element name="Email" type="T_Email" />
+    <xsd:element name="DateNaissance" type="xsd:date" />
+    <xsd:element name="ListeCours" type="T_ListeCours" />
+    <xsd:element name="Cours" type="T_Cours"/>
+    <xsd:element name="Intitule" type="T_Intitule" />
+    <xsd:element name="Credit" type="T_Credit" />
+
+    <!--TYPES-->
+    <!--COMPLEXES-->
+    <xsd:complexType name="T_Classe">
+        <xsd:sequence>
+            <xsd:element ref="Professeur" maxOccurs="1" />
+            <xsd:element ref="Eleve" minOccurs="6" maxOccurs="12" />
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="T_Professeur">
+        <xsd:all>
+            <xsd:element ref="Nom" />
+            <xsd:element ref="Prenom" />
+            <xsd:element ref="AnneeDebut" />
+            <xsd:element ref="Telephone" />
+            <xsd:element ref="Titre" />
+            <xsd:element ref="Email" />
+            <xsd:element ref="Adresse" />
+            <xsd:element ref="ListeCours"/>
+        </xsd:all>
+    </xsd:complexType>
+
+    <xsd:complexType name="T_ListeCours">
+        <xsd:sequence>
+            <xsd:element ref="Cours" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:complexType name="T_Cours">
+        <xsd:all>
+            <xsd:element ref="Intitule" />
+            <xsd:element ref="Credit" />
+        </xsd:all>
+    </xsd:complexType>
+    
+    <xsd:complexType name="T_Eleve">
+        <xsd:all>
+            <xsd:element ref="Nom" />
+            <xsd:element ref="Prenom" />
+            <xsd:element ref="DateNaissance" />
+            <xsd:element ref="Email" />
+        </xsd:all>
+    </xsd:complexType>
+
+    <!--SIMPLES-->
+    <xsd:simpleType name="T_Nom">
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="2" />
+            <xsd:maxLength value="50" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="T_Telephone">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="[0-9#*]+" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="T_Titre">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Mr" />
+            <xsd:enumeration value="Mme" />
+            <xsd:enumeration value="Melle" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="T_Email">
+        <xsd:restriction base="xsd:string">
+            <xsd:pattern value="[_\-a-zA-Z0-9\.\+]+@[a-zA-Z0-9](\.?[\-a-zA-Z0-9]*[a-zA-Z0-9])*" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="T_Intitule">
+        <xsd:restriction base="xsd:string">
+            <xsd:minLength value="2" />
+            <xsd:maxLength value="255" />
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="T_Credit">
+        <xsd:restriction base="xsd:positiveInteger">
+            <xsd:maxInclusive value="9" />
+        </xsd:restriction>
+    </xsd:simpleType>
+</xsd:schema>

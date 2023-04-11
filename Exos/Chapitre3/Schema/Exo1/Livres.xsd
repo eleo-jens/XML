@@ -1,0 +1,17 @@
+<?xml version="1.1" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <!--ELEMENT-->
+    <xsd:element name="Livres" type="T_Livres"/>
+    <xsd:element name="Livre" type="T_Livre"/>
+    <!--TYPES-->
+    <!--SIMPLES-->
+    <!--COMPLEXES-->
+    <xsd:complexType name="T_Livres">
+        <xsd:sequence>
+            <xsd:element ref="Livre" minOccurs="0" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <
+</xsd:schema>
